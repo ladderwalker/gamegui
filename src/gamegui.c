@@ -1,9 +1,19 @@
 #include "include/gamegui.h"
+#include "include/rawdraw_sf.h"
 
 
 
-void MainMenu(){
-    
+void MainMenu(menustate *m){
+    for(int i = 0; i < ITEMS; i++) {
+        if(i == m->statecount){
+            CNFGColor(0xFF0000FF);//red
+        } else {
+            CNFGColor(0xFFFFFFFF);//white
+        }
+        CNFGPenX = 500;
+        CNFGPenY = (100 * i) + 50;
+        CNFGDrawText(main_menu[i], 4);
+    }
 }
 
 void set_mstate(int keycode, int bdown, menustate *m) {
@@ -30,7 +40,6 @@ void set_mstate(int keycode, int bdown, menustate *m) {
                     }
                     break; //w
                 }
-                
             }
             break;
         }
