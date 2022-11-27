@@ -5,7 +5,9 @@
 #define GAMEGUI_H
 #include <stdint.h> 
 
-#define ITEMS 5
+#define ITEMS   5
+#define WIDTH   1024
+#define HEIGHT   768
 
 typedef struct {
     uint8_t current_state;
@@ -23,4 +25,4 @@ static char *main_menu[] = {
 void MainMenu(menustate *m);
 void set_mstate(int keycode, int bdown, menustate *m);
 
-#endif //GAMEGUI_H5
+#endif //GAMEGUI_H5 

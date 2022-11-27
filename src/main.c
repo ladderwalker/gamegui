@@ -11,8 +11,6 @@
 menustate ms = { 0 };
 menustate *mmstate = &ms;
 
-
-
 void HandleKey( int keycode, int bDown ) {
     set_mstate(keycode, bDown, mmstate);
 }
@@ -22,7 +20,7 @@ void HandleDestroy() { }
 int main()
 { 
     mmstate->current_state = 1;
-    CNFGSetup( "GameGUI", 1024, 768 );
+    CNFGSetup( "GameGUI", WIDTH, HEIGHT );
     
     while(CNFGHandleInput())
     {

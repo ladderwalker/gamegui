@@ -3,7 +3,7 @@ BIN=gamegui
 all : $(BIN)
 
 $(BIN) : $(wildcard ./src/*.c)
-	gcc -o ./build/$@ $^ -lX11 -lpthread -lXinerama -lXext -lGL -g -lm -ldl
+	gcc -o ./build/$@ $^ -lX11 -lpthread -lXinerama -lXext -lGL -g -lm -ldl -DCNFGOGL
 
 run :
 	./build/$(BIN)
